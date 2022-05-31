@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Dish from "../dish/Dish";
 
-const Dishes = (props) => {
+const Dishes = () => {
   const [meals, setMeals] = useState([]);
   
 
@@ -11,10 +11,10 @@ const Dishes = (props) => {
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${item.id}`
     )
       .then((res) => res.json())
-      .then((data) => setMeals(data.results))
+      .then((data) => setMeals(data.meals))
       .catch((error) => console.log(error));
   }, []);
-{console.log(props.meals)}
+{console.log(data.meals)}
   return (
     <>
       <div>
